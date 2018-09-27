@@ -6,7 +6,7 @@ public class Main {
 
     public static void main(String[] args) throws FileNotFoundException {
         Simulation items = new Simulation(ITEMS_FILE);
-        ArrayList<String> itemsList = items.loadItems();
+        ArrayList<Integer> itemsList = items.loadItems();
 
         System.out.println(itemsList);
 

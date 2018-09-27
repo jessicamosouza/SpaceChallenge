@@ -7,18 +7,22 @@ public class Simulation {
     // class that is responsible for reading item data
     // and filling up the rockets
 
-    private ArrayList<String> itemsList;
+    private ArrayList<Integer> itemsList;
 
     public Simulation(String itemsFile) throws FileNotFoundException {
         itemsList = new ArrayList<>();
         File file = new File(itemsFile);
         Scanner scanner = new Scanner(file);
-        while (scanner.hasNextLine()) {
-            itemsList.add(scanner.nextLine());
+        scanner.useDelimiter("\n");
+        while (scanner.hasNext()) {
+            String line = scanner.next();
+            String[] pieces = line.split("=");
+            itemsList.add(Integer.parseInt(pieces[1]));
         }
+        scanner.close();
     }
 
-    public ArrayList<String> loadItems(){
+    public ArrayList<Integer> loadItems(){
         return itemsList;
     }
 }
