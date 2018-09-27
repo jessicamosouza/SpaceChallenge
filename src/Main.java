@@ -10,6 +10,9 @@ public class Main {
         ArrayList<Item> items = simulation.loadItems();
 
         ArrayList<U1> rockets = simulation.loadU1(items);
+        ArrayList<U2> rockets2 = simulation.loadU2(items);
+
         System.out.println(rockets); //test
+        System.out.println(rockets2); //test
     }
 }

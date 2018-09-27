@@ -1,20 +1,24 @@
-public class U2 extends Rocket{
+import java.util.Random;
 
-    double rocketU2Cost = 120000000;
-    double rocketU2Weight = 18000; //kg
-    int rocketU2MaxWeight = 29000; //kg
+public class U2 extends Rocket {
 
-
-    @Override
-    public boolean land() {
-//        Chance of landing crash = 8% * (cargo carried / cargo limit)
-        return super.land();
-    }
+    double weight = 18000; //kg
+    int maxWeight = 29000; //kg
 
     @Override
     public boolean launch() {
-//        Chance of launch explosion = 4% * (cargo carried / cargo limit)
-        return super.launch();
+        Random randomNumber = new Random();
+        double rand = randomNumber.nextDouble();
+        int factor = (int) (0.04 * (weight / maxWeight));
+        return factor >= rand;
+    }
+
+    @Override
+    public boolean land() {
+        Random randomNumber = new Random();
+        double rand = randomNumber.nextDouble();
+        int factor = (int) (0.08 * (weight / maxWeight));
+        return factor >= rand;
     }
 }
 

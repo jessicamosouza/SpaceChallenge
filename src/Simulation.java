@@ -50,4 +50,20 @@ public class Simulation {
         return rockets;
     }
 
+    public ArrayList<U2> loadU2(ArrayList<Item> list) {
+        ArrayList<U2> rockets = new ArrayList<>();
+        U2 rocket = new U2();
+        rockets.add(rocket);
 
+        for (Item item : list) {
+            if (rocket.canCarry(item)) {
+                rocket.carry(item);
+            } else {
+                rocket = new U2();
+                rockets.add(rocket);
+                rocket.carry(item);
+            }
+        }
+        return rockets;
+    }
+}
