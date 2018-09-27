@@ -10,7 +10,6 @@ public class Simulation {
     private File file;
 
     public Simulation(String itemsFile) {
-        itemsList = new ArrayList<>();
         file = new File(itemsFile);
     }
 
