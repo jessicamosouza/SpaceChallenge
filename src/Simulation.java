@@ -33,17 +33,7 @@ public class Simulation {
         return itemsList;
     }
 
-    public int sum(){
-        /*
-         * this method sums all the items weight
-         */
-        int sum = 0;
-        for (Integer anItemsList : itemsList) { //for each element of the list
-            sum += anItemsList;
         }
-        return sum;
     }
-}
-
 
 
