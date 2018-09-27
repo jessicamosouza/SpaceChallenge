@@ -1,5 +1,8 @@
 public class Rocket implements SpaceShip {
 
+    private int currentWeight;
+    private int maxWeight;
+
     @Override
     public boolean launch() {
         // method that returns either true or false
@@ -18,13 +21,13 @@ public class Rocket implements SpaceShip {
     public void carry(Item item) {
         // method that also takes an Item object
         // and updates the current weight of the rocket
-        return 0;
+        currentWeight += item.weight;
     }
 
     public boolean canCarry(Item item) {
         // method that takes an Item as an argument
         // and returns true if the rocket can carry such item
         // or false if it will exceed the weight limit.
-        return false;
+        return currentWeight + item.weight <= maxWeight;
     }
 }
