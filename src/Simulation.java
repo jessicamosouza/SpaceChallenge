@@ -33,7 +33,21 @@ public class Simulation {
         return itemsList;
     }
 
+    public ArrayList<U1> loadU1(ArrayList<Item> list) {
+        ArrayList<U1> rockets = new ArrayList<>();
+        U1 rocket = new U1();
+        rockets.add(rocket);
+
+        for (Item item : list) {
+            if (rocket.canCarry(item)) {
+                rocket.carry(item);
+            } else {
+                rocket = new U1();
+                rockets.add(rocket);
+                rocket.carry(item);
+            }
         }
+        return rockets;
     }
 
 

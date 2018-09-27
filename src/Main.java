@@ -9,5 +9,7 @@ public class Main {
         Simulation simulation = new Simulation(ITEMS_FILE);
         ArrayList<Item> items = simulation.loadItems();
 
+        ArrayList<U1> rockets = simulation.loadU1(items);
+        System.out.println(rockets); //test
     }
 }
