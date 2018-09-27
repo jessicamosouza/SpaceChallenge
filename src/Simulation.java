@@ -6,8 +6,7 @@ import java.util.Scanner;
 public class Simulation {
     // class that is responsible for reading item data
     // and filling up the rockets
-
-    private ArrayList<Integer> itemsList;
+    private ArrayList<Item> itemsList = new ArrayList<>();
     private File file;
 
     public Simulation(String itemsFile) {
@@ -15,7 +14,7 @@ public class Simulation {
         file = new File(itemsFile);
     }
 
-    public ArrayList<Integer> loadItems() throws FileNotFoundException{
+    public ArrayList<Item> loadItems() throws FileNotFoundException {
         /*
          * this method loads all items from a text file and
          * returns an ArrayList of Items
@@ -25,7 +24,10 @@ public class Simulation {
         while (scanner.hasNext()) {
             String line = scanner.next();
             String[] pieces = line.split("=");
-            itemsList.add(Integer.parseInt(pieces[1]));
+            Item item = new Item();
+            item.name = pieces[0];
+            item.weight = Integer.parseInt(pieces[1]);
+            itemsList.add(item);
         }
         scanner.close();
 
