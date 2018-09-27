@@ -15,7 +15,7 @@ public class Rocket implements SpaceShip {
         return true;
     }
 
-    public int carry(Item item) {
+    public void carry(Item item) {
         // method that also takes an Item object
         // and updates the current weight of the rocket
         return 0;
